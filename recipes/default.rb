@@ -12,3 +12,15 @@ include_recipe 'python::pip'
 include_recipe 'mysql'
 include_recipe 'mysql::server'
 include_recipe 'trac'
+
+python_pip "Babel" do
+  action :upgrade
+end
+
+python_pip "Trac" do
+  action :upgrade
+end
+
+execute "trac-environment" do
+    command "trac-admin #{node['trac']['basedir']}/environment upgrade"
+end

@@ -87,7 +87,6 @@ Vagrant.configure("2") do |config|
     }
 
     chef.run_list = [
-        "recipe[openssl]",
         "recipe[trac-mysql::default]"
     ]
   end
