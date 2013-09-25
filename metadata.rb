@@ -10,3 +10,4 @@ depends :mysql
 depends :apache2
 depends :python
 depends :trac
+depends :apt
